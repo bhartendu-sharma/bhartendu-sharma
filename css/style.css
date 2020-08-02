@@ -139,7 +139,7 @@ p {
 .text.three-d-1 {
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 10px;
   font-family: "Arial", sans-serif;
   font-size: 50px;
 
@@ -280,6 +280,9 @@ nav.addSticky .navbar-brand {
 .c-bar {
   margin-right: 39.9px;
   font-size: 40px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
 }
 .navbar .c-bar {
   color: aqua;
