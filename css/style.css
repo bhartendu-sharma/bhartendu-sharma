@@ -1,15 +1,38 @@
+/* variable */
+:root {
+  --preloader-color: #1f1f1f;
+  --main-color-1: #ee8683;
+  --main-color-2: #ea1d6f;
+  --main-color-3: #eb466b;
+  --default-text-color: #fff;
+  /*for service section  */
+  --background-dark: #2d3548;
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-lighter: rgba(255, 255, 255, 0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+  /* top button section */
+}
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 /* testing purpose start--------- */
+
 /* body {
-  background: #4f4f4f;
+  background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
+  font-size: 12px;
 } */
-nav {
+/* nav {
   border: 2px solid red;
   background-color: aqua;
-}
+} */
 
 /* testing purpose end--------- */
 
@@ -38,7 +61,7 @@ p {
 }
 .universal-btn {
   padding: 5px 20px;
-  background-color: #ee8683 !important;
+  background-color: var(--main-color-1) !important;
   color: #fff !important;
 }
 
@@ -50,7 +73,7 @@ p {
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  background-color: #000;
+  background-color: var(--preloader-color);
   z-index: 99998;
 }
 .preloader::before {
@@ -59,7 +82,7 @@ p {
   bottom: 0;
   width: 100%;
   height: 50%;
-  background: #000;
+  background: var(--preloader-color);
   transition: 1s;
 }
 .preloader::after {
@@ -68,7 +91,7 @@ p {
   top: 0;
   width: 100%;
   height: 50%;
-  background: #000;
+  background: var(--preloader-color);
   transition: 1s;
 }
 .preloader.complete::before {
@@ -89,7 +112,7 @@ p {
   height: 100px;
   border-radius: 50%;
   border: 10px solid rgba(255, 255, 255, 0.1);
-  border-top: 10px solid #ee8683;
+  border-top: 10px solid var(--main-color-1);
   animation: animate 1.5s infinite linear;
   z-index: 99999;
 }
@@ -101,13 +124,44 @@ p {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-/* nav-bar----------------- */
-nav.c-nav {
-  background: transparent;
 
-  padding: 20px 0;
-  transition: 0.5s all;
+/* top button section */
+#button {
+  display: inline-block;
+  background-color: #ff9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
 }
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* 
 nav:hover {
   background-color: crimson;
@@ -143,6 +197,9 @@ nav.addSticky .navbar-brand {
 }
 nav.addSticky .navbar-nav .nav-link {
   color: #000;
+}
+.c-bar {
+  margin-right: 39.9px;
 }
 .navbar .c-bar {
   color: #fff;
@@ -190,7 +247,7 @@ header {
 }
 .content-box a:hover {
   background-color: #fff;
-  color: #000;
+  color: #3e3e3e;
   transition: 0.5s all;
 }
 .content-box p {
@@ -202,7 +259,7 @@ header {
   border: 2px solid chartreuse;
 }
 .about li a {
-  color: #000;
+  color: #3e3e3e;
   display: inline-block;
   height: 42px;
   width: 42px;
@@ -215,7 +272,7 @@ header {
   /* horizontally center kiya , a tag ke andar i content ko */
 }
 .about li a:hover {
-  color: #ee8683;
+  color: var(--main-color-1);
 }
 
 /* skills and experience section */
@@ -228,30 +285,226 @@ header {
   font-size: 10px;
 }
 .progress-bar {
-  background-color: #ee8683;
+  background-color: var(--main-color-1);
 }
 .exp-class label {
   font-size: 20px;
   margin: 10px;
 }
-/* service section */
-.service-class {
-  border: 4px solid darkmagenta;
+/* service section  */
+#cards_landscape_wrap-2 {
+  text-align: center;
+  background: #f7f7f7;
 }
-.card,
-.card-header {
-  background: #f8f9fa !important;
+#cards_landscape_wrap-2 .container {
+  padding-top: 80px;
+  padding-bottom: 100px;
 }
-.card-header {
-  border: none !important;
+#cards_landscape_wrap-2 a {
+  text-decoration: none;
+  outline: none;
 }
-.service-class .card-header i {
-  font-size: 50px;
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
 }
-.service-border {
-  height: 2px;
-  width: 40px;
-  margin: 15px auto;
-  background: #e65f78;
+#cards_landscape_wrap-2 .card-flyer .image-box {
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img {
+  -webkit-transition: all 0.9s ease;
+  -moz-transition: all 0.9s ease;
+  -o-transition: all 0.9s ease;
+  -ms-transition: all 0.9s ease;
+  transition: all 0.9s ease;
+  width: 100%;
+  height: 200px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img {
+  opacity: 0.7;
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  transform: scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box {
+  text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container {
+  padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer {
+  background: #ffffff;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
+}
+#cards_landscape_wrap-2 .card-flyer:hover {
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6 {
+  margin-top: 0px;
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Roboto Black", sans-serif;
+  letter-spacing: 1px;
+  color: #00acc1;
+}
+/* project section */
+.project-class {
+  background: grey;
+}
+
+.card-block .btn-outline-primary {
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.card {
+  margin: 20px 0;
+}
+
+/* Flip Cards CSS */
+.card-container {
+  perspective: 700px;
+}
+.card-flip {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  height: auto;
+  transition: all 0.5s ease-out;
+  background: white;
+  border: none;
+}
+
+.card-flip div {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.card-flip .front {
+  position: relative;
+  z-index: 1;
+}
+
+.card-flip .back {
+  position: relative;
+  z-index: 0;
+  transform: rotateY(-180deg);
+}
+
+.card-container:hover .card-flip {
+  transform: rotateY(180deg);
 }
 /* testimonial section */
+/* testmonial csa is in testimonial.css */
+
+/* get in touch => contact section */
+.contact {
+  padding: 130px 0;
+}
+
+.contact .heading h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.contact .heading h2 span {
+  color: #ff9100;
+}
+
+.contact .heading p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #999999;
+  margin: 20px 0 60px;
+  padding: 0;
+}
+
+.contact .form-control {
+  padding: 25px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border: 0;
+  border-radius: 10px;
+}
+
+.contact button.btn {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #ff9100;
+  color: #ffffff;
+}
+
+.contact .title h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.contact .title p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+  line-height: 1.6;
+  margin: 0 0 40px;
+}
+
+.contact .content .info {
+  margin-top: 30px;
+}
+.contact .content .info i {
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+  color: #02434b;
+  margin-right: 20px;
+  text-align: center;
+  width: 20px;
+}
+.contact .content .info h4 {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.contact .content .info h4 span {
+  font-size: 13px;
+  font-weight: 300;
+  color: #999999;
+}
