@@ -11,6 +11,7 @@
   --main-color-7: #bffa02;
   --card-bg-color-1: #9aa851;
   --default-text-color: #e30184 !important;
+  --element-color: #f9f6ed;
   /*for service section  */
   --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
@@ -32,7 +33,10 @@
 body {
   background-color: var(--main-bg-color);
 }
-
+/* elememt => skills rolling */
+.element {
+  color: var(--element-color);
+}
 /* body {
   background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
   font-size: 12px;
@@ -117,7 +121,7 @@ p {
   height: 100px;
   border-radius: 50%;
   border: 10px solid rgba(255, 255, 255, 0.1);
-  border-top: 10px solid var(--main-color-1);
+  border-top: 10px solid var(--main-color-2);
   animation: animate 1.5s infinite linear;
   z-index: 99999;
 }
