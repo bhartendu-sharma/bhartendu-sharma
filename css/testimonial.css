@@ -148,6 +148,7 @@
 .feedback-slider-thumb:hover {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 }
 
 .customer-feedback .owl-nav [class*="owl-"] {
