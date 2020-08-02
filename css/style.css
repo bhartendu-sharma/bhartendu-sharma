@@ -1,10 +1,16 @@
 /* variable */
 :root {
-  --preloader-color: #1f1f1f;
+  --preloader-color: #1d001e;
+  --nav-bg-color: #1d001e;
+  --main-bg-color: #2c0b2d;
   --main-color-1: #ee8683;
   --main-color-2: #ea1d6f;
-  --main-color-3: #eb466b;
-  --default-text-color: #fff;
+  --main-color-4: #edb23f;
+  --main-color-5: #44b78b;
+  --main-color-6: #987c4d;
+  --main-color-7: #bffa02;
+  --card-bg-color-1: #9aa851;
+  --default-text-color: #e30184 !important;
   /*for service section  */
   --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
@@ -15,7 +21,6 @@
   --spacing-xl: 32px;
   --spacing-xxl: 64px;
   --width-container: 1200px;
-  /* top button section */
 }
 * {
   margin: 0;
@@ -24,14 +29,13 @@
 }
 
 /* testing purpose start--------- */
+body {
+  background-color: var(--main-bg-color);
+}
 
 /* body {
   background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
   font-size: 12px;
-} */
-/* nav {
-  border: 2px solid red;
-  background-color: aqua;
 } */
 
 /* testing purpose end--------- */
@@ -50,19 +54,20 @@ p {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   line-height: 30px;
-  color: #6c757d;
+  color: var(--default-text-color);
 }
 .universal-padding {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 .bg-section {
-  background: #f8f9fa;
+  /* background: #f8f9fa; */
+  background: var(--main-bg-color);
 }
 .universal-btn {
   padding: 5px 20px;
   background-color: var(--main-color-1) !important;
-  color: #fff !important;
+  color: var(--default-text-color) !important;
 }
 
 /* preloader */
@@ -124,11 +129,78 @@ p {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+/* my nav text */
+/* .navbar-brand h2 {
+  
+} */
+.text {
+  display: none;
+}
+.text.three-d-1 {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  font-family: "Arial", sans-serif;
+  font-size: 50px;
+
+  font-weight: bold;
+  color: rgb(44, 11, 45);
+}
+.text.three-d-1:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: -moz-linear-gradient(
+    top,
+    rgba(44, 11, 45, 1) 0%,
+    rgba(44, 11, 45, 0) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(44, 11, 45, 1)),
+    color-stop(100%, rgba(44, 11, 45, 0))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(44, 11, 45, 1) 0%,
+    rgba(44, 11, 45, 0) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(44, 11, 45, 1) 0%,
+    rgba(44, 11, 45, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(44, 11, 45, 1) 0%,
+    rgba(44, 11, 45, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(44, 11, 45, 1) 0%,
+    rgba(44, 11, 45, 0) 100%
+  );
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272727', endColorstr='#00272727',GradientType=0 ); */
+}
+
+.my-nav-text.three-d-2 {
+  text-shadow: 0 -1px 0 #858585, 0 1px 10px rgba(0, 0, 0, 0.6),
+    0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 7px 10px rgba(0, 0, 0, 0.25), 0 15px 10px rgba(0, 0, 0, 0.2),
+    0 25px 15px rgba(0, 0, 0, 0.15);
+}
 
 /* top button section */
 #button {
   display: inline-block;
-  background-color: #ff9800;
+  background-color: var(--default-text-color);
   width: 50px;
   height: 50px;
   text-align: center;
@@ -152,7 +224,7 @@ p {
 }
 #button:hover {
   cursor: pointer;
-  background-color: #333;
+  background-color: var(--nav-bg-color);
 }
 #button:active {
   background-color: #555;
@@ -165,47 +237,116 @@ p {
 /* 
 nav:hover {
   background-color: crimson;
+
 } */
+nav {
+  height: 100px;
+  line-height: 100px;
+}
 nav .navbar-brand {
   font-size: 30px;
-  color: #fff;
+  /* color: #fff; */
 }
 nav .navbar-nav li a {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
+  /* color: rgba(255, 255, 255, 0.8); */
+  font-size: 22px;
   letter-spacing: 0.05em;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
+  line-height: 100px;
 }
 nav .navbar-nav li {
   border: 2px solid green;
   margin-left: 15px;
+  height: 100px;
 }
 
 nav.c-nav.addSticky {
   /* add claas to element itself note there is no space in writing class with . */
-  background: #fff !important;
+  background: var(--nav-bg-color) !important;
   padding: 15px 0;
   box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.05);
   transition: 0.5s all ease-in-out;
 }
 nav.addSticky .navbar-brand {
-  color: #000;
+  /* color: #000; */
   font-size: 40px;
   transition: 0.5s all;
   /*isi transition se sab kuch isme change hoga jo bhi css likhi hai jaises font-size and color  */
 }
-nav.addSticky .navbar-nav .nav-link {
-  color: #000;
-}
+
 .c-bar {
   margin-right: 39.9px;
+  font-size: 40px;
 }
 .navbar .c-bar {
-  color: #fff;
+  color: aqua;
 }
 nav.addSticky .c-bar {
-  color: #000;
+  color: aqua;
+  /* color: #f15426; */
+}
+/* design nav link */
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
+.design-nav-link {
+  font-size: calc(20px + 18vh);
+  line-height: calc(20px + 20vh);
+
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
 }
 
 /* header section-------------- */
@@ -230,7 +371,7 @@ header {
 .content-box {
   border: 2px solid yellow;
   max-width: 700px;
-  color: #fff;
+  color: var(--default-text-color);
 }
 .content-box h4 {
   font-size: 30px;
@@ -239,24 +380,27 @@ header {
   font-size: 52px;
 }
 .content-box a {
-  color: #fff;
+  color: var(--default-text-color);
   text-decoration: none;
   border: 2px solid #fff;
   border-radius: 20px;
   padding: 5px 25px;
 }
 .content-box a:hover {
-  background-color: #fff;
-  color: #3e3e3e;
+  background-color: #000;
+  color: var(--default-text-color);
   transition: 0.5s all;
 }
 .content-box p {
-  color: #fff;
+  color: var(--default-text-color);
 }
 
 /* about section */
 .about {
   border: 2px solid chartreuse;
+}
+.about h2 {
+  color: var(--main-color-4);
 }
 .about li a {
   color: #3e3e3e;
@@ -279,6 +423,12 @@ header {
 .exp-class {
   border: 4px solid crimson;
 }
+.exp-class h3 {
+  color: var(--main-color-4);
+}
+.exp-class label {
+  color: var(--main-color-5);
+}
 .exp-class progress {
   height: 10px;
   border-radius: 20px;
@@ -292,9 +442,12 @@ header {
   margin: 10px;
 }
 /* service section  */
+.service-class h6 {
+  color: var(--main-color-4) !important;
+}
 #cards_landscape_wrap-2 {
   text-align: center;
-  background: #f7f7f7;
+  background: var(--main-bg-color);
 }
 #cards_landscape_wrap-2 .container {
   padding-top: 80px;
@@ -308,7 +461,7 @@ header {
   border-radius: 5px;
 }
 #cards_landscape_wrap-2 .card-flyer .image-box {
-  background: #ffffff;
+  background: var(--main-bg-color);
   overflow: hidden;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -337,7 +490,7 @@ header {
   padding: 30px 18px;
 }
 #cards_landscape_wrap-2 .card-flyer {
-  background: #ffffff;
+  background: var(--main-bg-color);
   margin-top: 50px;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -347,7 +500,7 @@ header {
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
 }
 #cards_landscape_wrap-2 .card-flyer:hover {
-  background: #fff;
+  background: var(--main-bg-color);
   box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -362,7 +515,7 @@ header {
   padding-bottom: 0px;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #000000;
+  color: var(--default-text-color);
 }
 #cards_landscape_wrap-2 .card-flyer .text-box h6 {
   margin-top: 0px;
@@ -372,13 +525,15 @@ header {
   text-transform: uppercase;
   font-family: "Roboto Black", sans-serif;
   letter-spacing: 1px;
-  color: #00acc1;
+  color: var(--default-text-color);
 }
 /* project section */
 .project-class {
-  background: grey;
+  background: var(--main-bg-color);
 }
-
+.project-class h2 {
+  color: var(--main-color-6);
+}
 .card-block .btn-outline-primary {
   width: 100%;
   border-top-left-radius: 0;
@@ -402,7 +557,7 @@ header {
   transform-style: preserve-3d;
   height: auto;
   transition: all 0.5s ease-out;
-  background: white;
+  background: var(--card-bg-color-1);
   border: none;
 }
 
@@ -430,7 +585,10 @@ header {
 }
 /* testimonial section */
 /* testmonial csa is in testimonial.css */
-
+/* hire-me section */
+.hire-me-class h3 {
+  color: var(--main-color-7);
+}
 /* get in touch => contact section */
 .contact {
   padding: 130px 0;
@@ -444,14 +602,14 @@ header {
 }
 
 .contact .heading h2 span {
-  color: #ff9100;
+  color: var(--default-text-color);
 }
 
 .contact .heading p {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.7;
-  color: #999999;
+  color: var(--main-color-2);
   margin: 20px 0 60px;
   padding: 0;
 }
@@ -460,7 +618,7 @@ header {
   padding: 25px;
   font-size: 13px;
   margin-bottom: 10px;
-  background: #f9f9f9;
+  background: var(--card-bg-color-1);
   border: 0;
   border-radius: 10px;
 }
@@ -469,8 +627,8 @@ header {
   padding: 10px;
   border-radius: 10px;
   font-size: 15px;
-  background: #ff9100;
-  color: #ffffff;
+  background: var(--main-bg-color);
+  color: var(--default-text-color);
 }
 
 .contact .title h3 {
@@ -481,7 +639,7 @@ header {
 .contact .title p {
   font-size: 14px;
   font-weight: 400;
-  color: #999;
+  color: var(--default-text-color);
   line-height: 1.6;
   margin: 0 0 40px;
 }
@@ -506,5 +664,5 @@ header {
 .contact .content .info h4 span {
   font-size: 13px;
   font-weight: 300;
-  color: #999999;
+  color: var(--default-text-color);
 }

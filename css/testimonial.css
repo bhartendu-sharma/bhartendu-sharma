@@ -1,3 +1,22 @@
+:root {
+  --preloader-color: #1d001e;
+  --main-bg-color: #2c0b2d;
+  --main-color-1: #ee8683;
+  --main-color-2: #ea1d6f;
+  --main-color-3: #eb466b;
+  --default-text-color: #e30184;
+  /*for service section  */
+  --background-dark: #000;
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-lighter: rgba(255, 255, 255, 0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+  /* top button section */
+}
 .testimony-class {
   margin-left: auto;
   margin-right: auto;
@@ -71,9 +90,10 @@
 }
 
 .customer-rating {
-  background-color: #eee;
+  background-color: var(--main-bg-color);
   border: 3px solid #fff;
-  color: rgba(1, 1, 1, 0.702);
+  /* color: rgba(1, 1, 1, 0.702); */
+  color: var(--default-text-color);
   font-weight: 700;
   border-radius: 50%;
   position: absolute;
@@ -114,7 +134,7 @@
   right: 20px;
   bottom: 0;
   top: 103px;
-  background-color: #f6f6f6;
+  background-color: var(--main-bg-color);
   border: 1px solid rgba(251, 90, 13, 0.1);
   border-radius: 10px;
   z-index: -1;

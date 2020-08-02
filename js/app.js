@@ -8,13 +8,24 @@ $(document).ready(function () {
     var scroll = $(window).scrollTop();
     console.log(scroll);
     if (scroll >= 50) {
+      document.querySelector(".text").setAttribute("style", "display:contents");
       $(".sticky").addClass("addSticky");
+      $(".text").addClass("three-d-1");
+      $(".my-nav-text").addClass("three-d-2");
     } else {
+      document.querySelector(".text").setAttribute("style", "display:none");
       $(".sticky").removeClass("addSticky");
+      $(".text").removeClass("three-d-1");
+      $(".my-nav-text").removeClass("three-d-2");
     }
   });
   var typed = new Typed(".element", {
-    strings: ["Bhartendu", "a full stack developer", "programmer", "learner"],
+    strings: [
+      "Bhartendu Sharma",
+      "a full stack developer",
+      "programmer",
+      "learner",
+    ],
     smartBackspace: true,
     typeSpeed: 100,
     backSpeed: 100,
