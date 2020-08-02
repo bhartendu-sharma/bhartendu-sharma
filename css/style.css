@@ -242,6 +242,7 @@ nav:hover {
 nav {
   height: 100px;
   line-height: 100px;
+  position: fixed;
 }
 nav .navbar-brand {
   font-size: 30px;
