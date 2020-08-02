@@ -267,6 +267,7 @@ nav.c-nav.addSticky {
   padding: 15px 0;
   box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.05);
   transition: 0.5s all ease-in-out;
+  position: fixed;
 }
 nav.addSticky .navbar-brand {
   /* color: #000; */
