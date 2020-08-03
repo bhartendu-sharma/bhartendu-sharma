@@ -1,12 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+/* variable */
 :root {
   --preloader-color: #1d001e;
+  --nav-bg-color: #1d001e;
   --main-bg-color: #2c0b2d;
   --main-color-1: #ee8683;
   --main-color-2: #ea1d6f;
-  --main-color-3: #eb466b;
-  --default-text-color: #e30184;
+  --main-color-4: #edb23f;
+  --main-color-5: #44b78b;
+  --main-color-6: #987c4d;
+  --main-color-7: #bffa02;
+  --card-bg-color-1: linear-gradient(to right, #9aa851 0%, #eb466b 100%);
+  --testmonial-bg-color: linear-gradient(to right, #2c0b2d 0%, #eb466b 100%);
+  --default-text-color: #e30184 !important;
+  --element-color: #f9f6ed;
   /*for service section  */
-  --background-dark: #000;
+  --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
   --text-lighter: rgba(255, 255, 255, 0.9);
   --spacing-s: 8px;
@@ -15,11 +24,13 @@
   --spacing-xl: 32px;
   --spacing-xxl: 64px;
   --width-container: 1200px;
-  /* top button section */
 }
 .testimony-class {
   margin-left: auto;
   margin-right: auto;
+}
+.testimony-class p {
+  color: rgb(251, 90, 13);
 }
 .testimony-class img {
   max-width: 100%;
@@ -40,6 +51,7 @@
   font-weight: 400;
   display: inline-block;
   position: relative;
+  color: aqua;
 }
 .section-title:after,
 .section-title:before {
@@ -83,6 +95,7 @@
   margin-bottom: 25px;
   font-size: 20px;
   font-weight: 500;
+  color: crimson;
 }
 
 .feedback-slider-item p {
@@ -134,8 +147,10 @@
   right: 20px;
   bottom: 0;
   top: 103px;
-  background-color: var(--main-bg-color);
-  border: 1px solid rgba(251, 90, 13, 0.1);
+  background-color: var(--testmonial-bg-color);
+  /* border: 1px solid rgba(251, 90, 13, 0.1); */
+  border: 1px solid var(--main-color-2);
+
   border-radius: 10px;
   z-index: -1;
 }

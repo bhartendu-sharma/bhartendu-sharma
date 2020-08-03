@@ -1,22 +1,45 @@
+//download btn
+const buttons = document.getElementById("download-btn-a");
+
+buttons.onclick = function (e) {
+  let x = e.clientX - e.target.offsetLeft;
+  let y = e.clientY - e.target.offsetTop;
+  let ripple = document.createElement("span");
+  ripple.style.left = `${x}px`;
+  ripple.style.top = `${y}px`;
+  this.appendChild(ripple);
+  setTimeout(function () {
+    ripple.remove();
+  }, 600); // 1second = 1000ms
+};
+// welcome to animation
 $(document).ready(function () {
   $(window).on("load", function () {
     $(".preloader").addClass("complete");
   });
+  //nav
+  $(".nav-btn").click(function () {
+    $(".c-items").toggleClass("show");
+    $("ul li").toggleClass("hide");
+  });
+  $(".text").addClass("three-d-1");
+  $(".my-nav-text").addClass("three-d-2");
+  document.querySelector(".text").setAttribute("style", "display:contents");
 
   // ----------scrolling -------------------------
   $(window).on("scroll", function () {
     var scroll = $(window).scrollTop();
     console.log(scroll);
     if (scroll >= 50) {
-      document.querySelector(".text").setAttribute("style", "display:contents");
+      // document.querySelector(".text").setAttribute("style", "display:contents");
       $(".sticky").addClass("addSticky");
-      $(".text").addClass("three-d-1");
-      $(".my-nav-text").addClass("three-d-2");
+      // $(".text").addClass("three-d-1");
+      // $(".my-nav-text").addClass("three-d-2");
     } else {
-      document.querySelector(".text").setAttribute("style", "display:none");
+      // document.querySelector(".text").setAttribute("style", "display:none");
       $(".sticky").removeClass("addSticky");
-      $(".text").removeClass("three-d-1");
-      $(".my-nav-text").removeClass("three-d-2");
+      // $(".text").removeClass("three-d-1");
+      // $(".my-nav-text").removeClass("three-d-2");
     }
   });
   var typed = new Typed(".element", {
@@ -34,21 +57,25 @@ $(document).ready(function () {
     startDelay: 1000,
   });
   // progress bar
-  var waypoint = new Waypoint({
-    element: document.getElementById("exp-id"),
-    handler: function (direction) {
-      var progress_bar = document.querySelectorAll(".progress-bar");
-      progress_bar[0].setAttribute("style", "width:95%;transition:1s all");
-      progress_bar[1].setAttribute("style", "width:90%;transition:1.5s all");
-      progress_bar[2].setAttribute("style", "width:70%;transition:1.75s all");
-      progress_bar[3].setAttribute("style", "width:90%;transition:2s all");
-      progress_bar[4].setAttribute("style", "width:85%;transition:2.25s all");
-      progress_bar[5].setAttribute("style", "width:80%;transition:2.5s all");
-    },
-    offset: "90%",
-    // offset is important here
-  });
 
+  //progress bar
+  // var waypoint = new Waypoint({
+  //   element: document.getElementById("exp-id"),
+  //   handler: function (direction) {
+  //     var progress_bar = document.querySelectorAll(".progress-bar");
+  //     progress_bar[0].setAttribute("style", "width:95%;transition:1s all");
+  //     progress_bar[1].setAttribute("style", "width:90%;transition:1.5s all");
+  //     progress_bar[2].setAttribute("style", "width:70%;transition:1.75s all");
+  //     progress_bar[3].setAttribute("style", "width:90%;transition:2s all");
+  //     progress_bar[4].setAttribute("style", "width:85%;transition:2.25s all");
+  //     progress_bar[5].setAttribute("style", "width:65%;transition:2.5s all");
+  //     progress_bar[5].setAttribute("style", "width:85%;transition:2.75s all");
+  //     progress_bar[5].setAttribute("style", "width:80%;transition:3.0s all");
+  //   },
+  //   offset: "90%",
+  //   // offset is important here
+  // });
+  //-----------------------------
   //   var progress_bar = document.querySelectorAll(".progress-bar");
   //   progress_bar[0].setAttribute("style", "width:95%;transition:1s all");
   //   progress_bar[1].setAttribute("style", "width:90%;transition:1.5s all");
@@ -145,7 +172,7 @@ $(document).ready(function () {
     return false;
   });
 
-  // project section
+  //project section
   var front = document.getElementsByClassName("front");
   var back = document.getElementsByClassName("back");
 
@@ -180,5 +207,14 @@ $(document).ready(function () {
   btn.on("click", function (e) {
     e.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "300");
+  });
+
+  // progress bar
+
+  // Progress bars
+  $(document).ready(function () {
+    $(".progress .progress-bar").css("width", function () {
+      return $(this).attr("aria-valuenow") + "%";
+    });
   });
 });
